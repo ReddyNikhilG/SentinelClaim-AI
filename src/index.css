@@ -1,0 +1,390 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Enterprise Insurance Design System - Guidewire Aligned */
+
+@layer base {
+  :root {
+    /* Enterprise Navy Blues - Primary Palette */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 15%;
+
+    /* Deep Navy Primary */
+    --primary: 215 50% 23%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Soft Blue Gray Secondary */
+    --secondary: 210 20% 94%;
+    --secondary-foreground: 215 25% 25%;
+
+    /* Muted tones */
+    --muted: 210 15% 95%;
+    --muted-foreground: 215 15% 45%;
+
+    /* Teal Accent */
+    --accent: 185 55% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Status Colors */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 200 80% 50%;
+    --info-foreground: 0 0% 100%;
+
+    /* Risk Colors */
+    --risk-low: 142 70% 45%;
+    --risk-medium: 38 92% 50%;
+    --risk-high: 0 72% 51%;
+
+    /* UI Elements */
+    --border: 214 20% 88%;
+    --input: 214 20% 88%;
+    --ring: 215 50% 23%;
+
+    --radius: 0.625rem;
+
+    /* Sidebar - Professional Gray */
+    --sidebar-background: 215 25% 15%;
+    --sidebar-foreground: 210 20% 92%;
+    --sidebar-primary: 185 55% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 30% 22%;
+    --sidebar-accent-foreground: 210 20% 92%;
+    --sidebar-border: 215 25% 25%;
+    --sidebar-ring: 185 55% 52%;
+
+    /* Chart Colors */
+    --chart-1: 215 50% 23%;
+    --chart-2: 185 55% 42%;
+    --chart-3: 142 70% 45%;
+    --chart-4: 38 92% 50%;
+    --chart-5: 0 72% 51%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(215 50% 23%) 0%, hsl(215 45% 35%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(185 55% 42%) 0%, hsl(185 50% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(215 50% 18%) 0%, hsl(215 45% 28%) 50%, hsl(185 40% 35%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(210 20% 98%) 100%);
+    --gradient-sidebar: linear-gradient(180deg, hsl(215 25% 15%) 0%, hsl(215 30% 12%) 100%);
+
+    /* Role-based sidebar accent colors */
+    --role-admin-accent: 185 55% 52%;
+    --role-adjuster-accent: 142 70% 45%;
+    --role-siu-accent: 0 72% 55%;
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(215 25% 15% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(215 25% 15% / 0.08), 0 2px 4px -2px hsl(215 25% 15% / 0.05);
+    --shadow-lg: 0 10px 15px -3px hsl(215 25% 15% / 0.1), 0 4px 6px -4px hsl(215 25% 15% / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(215 25% 15% / 0.12), 0 8px 10px -6px hsl(215 25% 15% / 0.05);
+    --shadow-card: 0 1px 3px hsl(215 25% 15% / 0.08), 0 1px 2px -1px hsl(215 25% 15% / 0.08);
+    --shadow-card-hover: 0 10px 40px -10px hsl(215 25% 15% / 0.15);
+  }
+
+  .dark {
+    --background: 215 30% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 215 28% 12%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 215 28% 12%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 185 55% 52%;
+    --primary-foreground: 215 25% 10%;
+
+    --secondary: 215 25% 18%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 215 25% 18%;
+    --muted-foreground: 210 15% 60%;
+
+    --accent: 185 55% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 25% 22%;
+    --input: 215 25% 22%;
+    --ring: 185 55% 52%;
+
+    --sidebar-background: 215 30% 6%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 185 55% 52%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 28% 15%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 215 25% 18%;
+    --sidebar-ring: 185 55% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Enterprise Card Styles */
+  .card-enterprise {
+    @apply bg-card rounded-lg border border-border;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .card-enterprise:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-1px);
+  }
+
+  /* Status Badge Styles */
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium;
+  }
+
+  .status-pending {
+    @apply bg-warning/10 text-warning;
+  }
+
+  .status-under-review {
+    @apply bg-info/10 text-info;
+  }
+
+  .status-approved {
+    @apply bg-success/10 text-success;
+  }
+
+  .status-rejected {
+    @apply bg-destructive/10 text-destructive;
+  }
+
+  .status-siu {
+    @apply bg-destructive/15 text-destructive font-semibold;
+  }
+
+  /* Risk Score Styles */
+  .risk-badge {
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .risk-low {
+    background: hsl(var(--risk-low) / 0.12);
+    color: hsl(var(--risk-low));
+  }
+
+  .risk-medium {
+    background: hsl(var(--risk-medium) / 0.12);
+    color: hsl(var(--risk-medium));
+  }
+
+  .risk-high {
+    background: hsl(var(--risk-high) / 0.12);
+    color: hsl(var(--risk-high));
+  }
+
+  /* Data Table Styles */
+  .data-table {
+    @apply w-full text-sm;
+  }
+
+  .data-table th {
+    @apply text-left font-semibold text-muted-foreground uppercase tracking-wider text-xs px-4 py-3 bg-muted/50;
+  }
+
+  .data-table td {
+    @apply px-4 py-3 border-b border-border;
+  }
+
+  .data-table tr:hover td {
+    @apply bg-muted/30;
+  }
+
+  /* Dashboard Metric Card */
+  .metric-card {
+    @apply bg-card rounded-xl border border-border p-6;
+    box-shadow: var(--shadow-card);
+  }
+
+  .metric-value {
+    @apply text-xl sm:text-2xl lg:text-3xl font-bold text-foreground truncate;
+  }
+
+  .metric-label {
+    @apply text-sm text-muted-foreground font-medium;
+  }
+
+  .metric-trend-up {
+    @apply text-success text-sm font-medium;
+  }
+
+  .metric-trend-down {
+    @apply text-destructive text-sm font-medium;
+  }
+
+  /* Hero Gradient Background */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  /* Sidebar Navigation */
+  .nav-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sidebar-foreground/80 hover:bg-sidebar-accent hover:text-sidebar-foreground transition-colors;
+  }
+
+  .nav-item.active {
+    @apply bg-sidebar-primary/20 text-sidebar-primary font-medium;
+  }
+
+  /* Role-based Sidebar Themes */
+  .role-sidebar-admin {
+    border-left: 3px solid hsl(var(--role-admin-accent));
+    box-shadow: inset 3px 0 0 hsl(var(--role-admin-accent) / 0.15);
+  }
+  .role-sidebar-admin .nav-item.active {
+    background: hsl(var(--role-admin-accent) / 0.2);
+    color: hsl(var(--role-admin-accent));
+  }
+
+  .role-sidebar-adjuster {
+    border-left: 3px solid hsl(var(--role-adjuster-accent));
+    box-shadow: inset 3px 0 0 hsl(var(--role-adjuster-accent) / 0.15);
+  }
+  .role-sidebar-adjuster .nav-item.active {
+    background: hsl(var(--role-adjuster-accent) / 0.2);
+    color: hsl(var(--role-adjuster-accent));
+  }
+
+  .role-sidebar-siu {
+    border-left: 3px solid hsl(var(--role-siu-accent));
+    box-shadow: inset 3px 0 0 hsl(var(--role-siu-accent) / 0.15);
+  }
+  .role-sidebar-siu .nav-item.active {
+    background: hsl(var(--role-siu-accent) / 0.2);
+    color: hsl(var(--role-siu-accent));
+  }
+
+  /* Form Styles */
+  .form-label {
+    @apply text-sm font-medium text-foreground mb-1.5 block;
+  }
+
+  .form-input {
+    @apply w-full rounded-lg border border-input bg-background px-4 py-2.5 text-sm transition-colors focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20;
+  }
+
+  /* Loading Skeleton */
+  .skeleton-pulse {
+    @apply animate-pulse bg-muted rounded;
+  }
+
+  /* Notification Badge */
+  .notification-dot {
+    @apply absolute -top-1 -right-1 w-2.5 h-2.5 bg-destructive rounded-full;
+  }
+
+  /* Scrollbar Styling */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/30;
+  }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .bg-gradient-sidebar {
+    background: var(--gradient-sidebar);
+  }
+
+  .shadow-enterprise {
+    box-shadow: var(--shadow-lg);
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.2s ease-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

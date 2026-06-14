@@ -1,0 +1,1 @@
+ALTER TABLE public.sla_thresholds ADD COLUMN escalation_consecutive_weeks integer NOT NULL DEFAULT 2;

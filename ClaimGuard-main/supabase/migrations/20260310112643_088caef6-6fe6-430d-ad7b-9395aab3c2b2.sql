@@ -1,0 +1,1 @@
+ALTER TABLE public.sla_thresholds ADD COLUMN IF NOT EXISTS slack_channel text NOT NULL DEFAULT '#general';
